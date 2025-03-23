@@ -1,0 +1,33 @@
+# Ignore service account JSON file
+ai-learn-a-story-6587674d2970.json
+
+# Ignore Python-related files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.sqlite3
+*.log
+
+# Ignore Django static and media files
+server/staticfiles/
+server/media/
+
+# Ignore environment files
+.env
+*.env
+
+# Ignore Node.js-related files
+node_modules/
+webv2/node_modules/
+webv2/dist/
+
+# Ignore IDE/editor files
+.DS_Store
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
