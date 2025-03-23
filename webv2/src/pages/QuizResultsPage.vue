@@ -120,10 +120,10 @@
                 <span class="mr-3">📋</span> Question Review
               </h3>
               <div>
-                <button @click="showAnswers = !showAnswers"
+                <!-- <button @click="showAnswers = !showAnswers"
                   class="px-5 py-2 bg-gradient-to-r from-purple-100 to-indigo-100 text-indigo-700 rounded-full hover:from-purple-200 hover:to-indigo-200 transition-all font-bold">
                   {{ showAnswers ? 'Hide Answers' : 'Show Answers' }}
-                </button>
+                </button> -->
               </div>
             </div>
 

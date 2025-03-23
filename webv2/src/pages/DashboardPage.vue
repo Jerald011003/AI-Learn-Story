@@ -304,7 +304,7 @@ export default {
     },
     async fetchStories() {
       try {
-        const response = await axios.get("http://127.0.0.1:8000/api/v1/storybook/api/stories/", {
+        const response = await axios.get("http://127.0.0.1:8000/api/v1/storybook/stories/", {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem("access_token")}`,
           },

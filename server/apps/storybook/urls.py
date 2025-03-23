@@ -17,7 +17,7 @@ urlpatterns = [
     path('story/<int:story_id>/quiz/', QuizDetailView.as_view(), name='quiz_detail'),
 
     # New Endpoints
-    path('api/stories/', StoryAPIView.as_view(), name='story_api'),
+    path('stories/', StoryAPIView.as_view(), name='story_api'),
     path('quiz/<int:story_id>/', QuizAPIView.as_view(), name='quiz'),
 ]
 
