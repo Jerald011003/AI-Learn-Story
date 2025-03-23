@@ -211,14 +211,14 @@ export default {
       this.error = null;
 
       try {
-        console.log(`Fetching quiz results for story ID: ${this.id}`);
+        // console.log(`Fetching quiz results for story ID: ${this.id}`);
         const response = await axios.get(`http://127.0.0.1:8000/api/v1/storybook/story/${this.id}/quiz/`, {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem("access_token")}`
           }
         });
 
-        console.log("Quiz results API response:", response.data);
+        // console.log("Quiz results API response:", response.data);
 
         if (response.status === 200) {
           const { story, quiz } = response.data;
@@ -228,8 +228,8 @@ export default {
             return;
           }
 
-          console.log("User Answers:", quiz.user_answers || {});
-          console.log("Questions:", quiz.questions);
+          // console.log("User Answers:", quiz.user_answers || {});
+          // console.log("Questions:", quiz.questions);
 
           this.results = {
             story_id: story.id,
@@ -245,7 +245,7 @@ export default {
 
           this.formatQuestions();
 
-          console.log("Quiz results loaded:", this.results);
+          // console.log("Quiz results loaded:", this.results);
         }
       } catch (error) {
         console.error("Error fetching quiz results:", error);
@@ -348,7 +348,7 @@ export default {
     }
   },
   mounted() {
-    console.log("QuizResultsPage mounted with story ID:", this.id);
+    // console.log("QuizResultsPage mounted with story ID:", this.id);
     this.fetchResults();
   }
 };

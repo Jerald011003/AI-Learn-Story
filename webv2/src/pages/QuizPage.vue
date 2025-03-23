@@ -167,14 +167,14 @@ export default {
       this.error = null;
 
       try {
-        console.log(`Fetching quiz for story ID: ${this.id}`);
+        // console.log(`Fetching quiz for story ID: ${this.id}`);
         const response = await axios.get(`http://127.0.0.1:8000/api/v1/storybook/quiz/${this.id}/`, {
           headers: {
             "Authorization": `Bearer ${localStorage.getItem("access_token")}`
           }
         });
 
-        console.log("Quiz API response:", response.data);
+        // console.log("Quiz API response:", response.data);
 
         if (response.status === 200) {
           const { story, quiz } = response.data;
@@ -202,7 +202,7 @@ export default {
           };
 
           this.answers = new Array(this.quiz.questions.length).fill(null);
-          console.log("Quiz data loaded:", this.quiz);
+          // console.log("Quiz data loaded:", this.quiz);
         }
       } catch (error) {
         if (error.response?.status === 404) {
@@ -248,7 +248,7 @@ export default {
       this.quizCompleted = true;
 
       try {
-        console.log("Submitting answers:", this.answers);
+        // console.log("Submitting answers:", this.answers);
 
         const response = await axios.post(
           `http://127.0.0.1:8000/api/v1/storybook/quiz/${this.id}/`,
@@ -261,7 +261,7 @@ export default {
           }
         );
 
-        console.log("Quiz submission response:", response.data);
+        // console.log("Quiz submission response:", response.data);
 
         localStorage.setItem(`quiz_${this.id}_score`, response.data.score);
         localStorage.setItem(`quiz_${this.id}_total`, response.data.total_questions);
@@ -276,7 +276,7 @@ export default {
 
   },
   mounted() {
-    console.log("QuizPage mounted with story ID:", this.id);
+    // console.log("QuizPage mounted with story ID:", this.id);
     this.fetchQuiz();
   }
 };
