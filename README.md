@@ -16,6 +16,9 @@ cd server
 # Install Python dependencies
 pip install -r requirements.txt
 
+#create .env and put your GEMINI API Key
+echo "GEMINI_API_KEY='AIzaSyA2aiu_C_4uL0EKOolwDyqJqXOhvfHqYAI'" > .env
+
 # Apply database migrations
 python manage.py makemigrations
 python manage.py migrate
