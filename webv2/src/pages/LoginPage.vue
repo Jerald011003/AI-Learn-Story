@@ -140,7 +140,7 @@ export default {
             localStorage.setItem("username", this.username); 
             
             this.debugInfo = "Token obtained, redirecting...";
-            console.log("Login successful, tokens stored");
+            // console.log("Login successful, tokens stored");
             
             this.$router.push("/dashboard");
           } else {

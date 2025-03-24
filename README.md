@@ -17,7 +17,7 @@ cd server
 pip install -r requirements.txt
 
 #create .env and put your GEMINI API Key
-echo "GEMINI_API_KEY='AIzaSyA2aiu_C_4uL0EKOolwDyqJqXOhvfHqYAI'" > .env
+GEMINI_API_KEY='AIzaSyA2aiu_C_4uL0EKOolwDyqJqXOhvfHqYAI'
 
 # Apply database migrations
 python manage.py makemigrations
@@ -33,4 +33,4 @@ cd ../webv2
 npm install
 
 # Run the development server
-npm run dev
+npm run serve

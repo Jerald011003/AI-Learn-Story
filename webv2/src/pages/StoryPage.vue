@@ -200,14 +200,14 @@ export default {
   this.error = null;
   
   try {   
-    console.log(`Fetching story with ID: ${this.id}`);
+    // console.log(`Fetching story with ID: ${this.id}`);
     const response = await axios.get(`http://127.0.0.1:8000/api/v1/storybook/story/${this.id}/`, {
       headers: {
         "Authorization": `Bearer ${localStorage.getItem("access_token")}`
       }
     });
     
-    console.log("Story API response:", response.data);
+    // console.log("Story API response:", response.data);
     
     if (response.status === 200) {
       this.story = response.data;
@@ -220,7 +220,7 @@ export default {
         this.story.current_passage = "Your story is ready to begin. What happens next?";
       }
       
-      console.log("Story data loaded:", this.story);
+      // console.log("Story data loaded:", this.story);
     }
   } catch (error) {
     console.error("Error fetching story:", error);
@@ -239,7 +239,7 @@ async continueStory() {
   this.submitting = true;
   
   try {
-    console.log(`Continuing story ${this.id} with prompt: ${this.userPrompt}`);
+    // console.log(`Continuing story ${this.id} with prompt: ${this.userPrompt}`);
     
     const response = await axios.post(`http://127.0.0.1:8000/api/v1/storybook/story/${this.id}/`, {
       prompt: this.userPrompt
@@ -250,7 +250,7 @@ async continueStory() {
       }
     });
     
-    console.log("Story continuation response:", response.data);
+    // console.log("Story continuation response:", response.data);
     
     if (response.status === 200) {
       if (response.data.status === 'complete' && response.data.redirect_to_quiz) {
@@ -336,7 +336,7 @@ async continueStory() {
     }
   },
   mounted() {
-    console.log("StoryPage mounted with ID:", this.id);
+    // console.log("StoryPage mounted with ID:", this.id);
     this.fetchStory();
     this.initSpeechRecognition();
   },
